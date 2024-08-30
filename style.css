@@ -1,6 +1,17 @@
 :root {
+  --clr-surface: #fdfbfb;
+  --clr-primary: #121212;
+  --clr-secondary: #cce5fc;
+  --clr-nav-bg: #c0def1;
+  --clr-button-pop: #90cff7;
 }
-
+.darktheme {
+  --clr-surface: #121212;
+  --clr-primary: #f9f9f9;
+  --clr-secondary: #3f3f3f;
+  --clr-nav-bg: #575757;
+  --clr-button-pop: #2e2e2e;
+}
 /* CSS reset section */
 *,
 *::before,
@@ -11,12 +22,15 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Nunito Sans", sans-serif;
   list-style: none;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--clr-surface);
+  color: var(--clr-primary);
 }
 
 img,
@@ -29,10 +43,13 @@ svg {
 }
 
 input,
+input::placeholder,
 button,
 textarea,
 select {
   font: inherit;
+  color: var(--clr-primary);
+  outline: none;
 }
 
 p,
@@ -49,8 +66,81 @@ h6 {
 #__next {
   isolation: isolate;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* Default template */
 .hidden {
   display: none;
+}
+.mobile-hidden {
+  display: none;
+}
+.desktop-hidden {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+}
+/* Styling navbar */
+#navbar {
+  background-color: var(--clr-nav-bg);
+  padding: 0.5rem;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#home-link {
+  font-size: 0.8rem;
+  background-color: var(--clr-button-pop);
+  box-shadow: 2px 2px 10px 1px var(--clr-primary);
+  border-radius: 0.6rem;
+  padding: 2px;
+  font-weight: 600;
+}
+.nav-search {
+  background-color: var(--clr-surface);
+  display: flex;
+  height: 2rem;
+  border: 1px solid black;
+  border-radius: 500px;
+  padding: 0.15rem 2px 0.15rem 0.5rem;
+}
+.search-field {
+  background: transparent;
+  border: none;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+.login-link {
+  background-color: var(--clr-button-pop);
+  border-radius: 20px;
+  padding: none;
+  width: 2rem;
+  & > svg {
+    fill: var(--clr-primary);
+    border-radius: 200px;
+    box-shadow: 2px 2px 10px 1px var(--clr-primary);
+  }
+}
+
+#theme-toggle {
+  border: none;
+  background-color: var(--clr-button-pop);
+  border-radius: 20px;
+  padding: none;
+
+  & > svg {
+    fill: var(--clr-primary);
+    border-radius: 200px;
+    box-shadow: 2px 2px 10px 1px var(--clr-primary);
+  }
 }
