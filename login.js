@@ -21,7 +21,7 @@ themeToggle.addEventListener("click", () => {
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
 const loginWindow = document.querySelector(".login-window");
-const submitWindow = document.querySelector(".signup-window");
+const signupWindow = document.querySelector(".signup-window");
 
 loginWindow.addEventListener("click", () => {
   main.classList.add("hidden");
