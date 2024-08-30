@@ -13,17 +13,188 @@
     />
     <title>Login</title>
   </head>
-  <body>
-    <nav>
-      <div id="nav-hamburger"></div>
-      <h1 id="nav-heading">Weather</h1>
+  <body class="body">
+    <!-- Navbar Content -->
+    <nav id="navbar">
       <div class="nav-container">
-        <ul>
-          <li id="nav-home"><a href="./index.html">HOME</a></li>
-          <li id="nav-login"><a href="./login.html">LOGIN</a></li>
-        </ul>
+        <div id="nav-home">
+          <a href="./index.html"><p id="home-link">HOME</p></a>
+        </div>
+        <div class="nav-search">
+          <input
+            type="search"
+            name="search"
+            class="search-field"
+            placeholder="Search city..."
+            autocomplete="off"
+            aria-label="search"
+            data-search-field
+          />
+        </div>
+        <a href="./login.html" class="login-link"
+          ><span class="login-text mobile-hidden">LOGIN</span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28px"
+            viewBox="0 -960 960 960"
+            width="34px"
+            fill="#5f6368"
+          >
+            <path
+              d="M480-440q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-46q-54-53-125.5-83.5T480-360q-83 0-154.5 30.5T200-246v46Z"
+            /></svg
+        ></a>
+
+        <button id="theme-toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#5f6368"
+          >
+            <path
+              d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
-    <h1>This is login page</h1>
+    <!-- Navbar Ends -->
+    <!-- Login/Signup Form -->
+    <div class="main">
+      <h1>Signup</h1>
+      <form>
+        <div>
+          <label for="name-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"
+              /></svg
+          ></label>
+          <input type="text" name="name" id="name-input" placeholder="Name" />
+        </div>
+        <div>
+          <label for="email-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"
+              /></svg
+          ></label>
+          <input
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <label for="password-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"
+              /></svg
+          ></label>
+          <input
+            type="password"
+            name="password"
+            id="password-input"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <label for="confirm-password-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"
+              /></svg
+          ></label>
+          <input
+            type="text"
+            name="confirm-password"
+            id="confirm-password-input"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button class="signup-submit">SIGNUP</button>
+      </form>
+      <p class="suggestion">
+        Already have an account?<button class="login-window">Login</button>
+      </p>
+    </div>
+    <div class="wrapper hidden">
+      <h1>LOGIN</h1>
+      <form>
+        <div>
+          <label for="email-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"
+              /></svg
+          ></label>
+          <input
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <label for="password-input"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"
+              /></svg
+          ></label>
+          <input
+            type="password"
+            name="password"
+            id="password-input"
+            placeholder="Password"
+          />
+        </div>
+        <button class="login-submit">SIGNUP</button>
+      </form>
+      <p class="suggestion">
+        Doesn't have an account?<button class="signup-window">signup</button>
+      </p>
+    </div>
+    <script src="./login.js" charset="UTF-8"></script>
   </body>
 </html>
