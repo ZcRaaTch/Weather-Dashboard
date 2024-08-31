@@ -38,7 +38,7 @@ let hourlyForecastCard = document.querySelector(".hourly-forecast");
 function getDetails(name, lat, lon, country, state) {
   let forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`,
     weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`,
-    airPollutionURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`,
+    airPollutionURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`,
     days = [
       "Sunday",
       "Monday",
@@ -247,7 +247,7 @@ citySearch.addEventListener("change", () => {
   let cityName = citySearch.value;
   citySearch.value = "";
   if (!cityName) return;
-  let G_api_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+  let G_api_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
   fetch(G_api_URL)
     .then((res) => res.json())
     .then((data) => {
