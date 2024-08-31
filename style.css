@@ -104,6 +104,7 @@ button {
 /* Styling navbar */
 /* --------------------------------------------------------------------- */
 #navbar {
+  max-height: 80px;
   background-color: var(--clr-nav-bg);
   padding: 0.5rem;
 }
@@ -159,11 +160,13 @@ button {
 /* --------------------------------------------------------------------- */
 /* desktop resolution stylilng for navbar */
 /* --------------------------------------------------------------------- */
-@media (min-width: 575px) {
+@media (min-width: 376px) {
   .logo {
+    float: left;
     display: inline-flex;
-    transform: translateY(0.8rem);
+    margin: auto 0px;
     gap: 6px;
+
     & > svg {
       fill: var(--clr-primary);
     }
@@ -172,8 +175,9 @@ button {
     }
   }
   .nav-container {
-    margin: 0 5rem;
-    width: 80%;
+    width: 70%;
+    margin: 0 auto;
+
     justify-content: space-between;
   }
   #home-link {
@@ -190,7 +194,7 @@ button {
       padding: 0 1rem;
     }
   }
-  .login-link {
+  .nav-login-link {
     display: flex;
     gap: 6px;
     padding: 0.25rem 0.5rem;
@@ -210,6 +214,8 @@ button {
 .wrapper,
 .main {
   background-color: var(--clr-secondary);
+  overflow-x: hidden;
+
   width: min(600px, 90%);
   margin: 200px auto;
   padding: 1rem;
@@ -424,6 +430,9 @@ label > svg {
       column-gap: 10px;
       & .card {
         text-align: center;
+        & p:nth-of-type(1) {
+          margin-bottom: 8px;
+        }
       }
     }
   }
