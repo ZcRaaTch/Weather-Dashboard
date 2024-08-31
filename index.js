@@ -265,7 +265,7 @@ function getUserData() {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       let { latitude, longitude } = position.coords;
-      let reverseGeocodingURL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`;
+      let reverseGeocodingURL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`;
 
       fetch(reverseGeocodingURL)
         .then((res) => res.json())
