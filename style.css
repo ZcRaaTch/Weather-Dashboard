@@ -5,6 +5,14 @@
   --clr-secondary: #cce5fc;
   --clr-nav-bg: #c0def1;
   --clr-button-pop: #90cff7;
+
+  /* AQI index color */
+
+  --aqi-1: #d4e157;
+  --aqi-2: #ffee58;
+  --aqi-3: #ffca28;
+  --aqi-4: #ff7043;
+  --aqi-5: #ef5350;
 }
 .darktheme {
   --clr-surface: #121212;
@@ -70,10 +78,14 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+/* --------------------------------------------------------------------- */
 /* Default template */
+/* --------------------------------------------------------------------- */
 .hidden {
   display: none;
+}
+hr {
+  margin-bottom: 10px;
 }
 button {
   cursor: pointer;
@@ -88,27 +100,28 @@ button {
     display: none;
   }
 }
+/* --------------------------------------------------------------------- */
 /* Styling navbar */
+/* --------------------------------------------------------------------- */
 #navbar {
   background-color: var(--clr-nav-bg);
   padding: 0.5rem;
 }
 .nav-container {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-around;
 }
 #home-link {
   font-size: 0.8rem;
   background-color: var(--clr-button-pop);
-  box-shadow: 2px 2px 10px 1px var(--clr-primary);
+  box-shadow: 1px 1px 10px 1px var(--clr-primary);
   border-radius: 0.6rem;
   padding: 2px;
   font-weight: 600;
 }
 .nav-search {
   background-color: var(--clr-surface);
-  display: flex;
   height: 2rem;
   border: 1px solid black;
   border-radius: 500px;
@@ -125,11 +138,10 @@ button {
   background-color: var(--clr-button-pop);
   border-radius: 20px;
   padding: none;
-  width: 2rem;
   & > svg {
     fill: var(--clr-primary);
     border-radius: 200px;
-    box-shadow: 2px 2px 10px 1px var(--clr-primary);
+    box-shadow: 1px 1px 10px 1px var(--clr-primary);
   }
 }
 #theme-toggle {
@@ -141,11 +153,60 @@ button {
   & > svg {
     fill: var(--clr-primary);
     border-radius: 200px;
-    box-shadow: 2px 2px 10px 1px var(--clr-primary);
+    box-shadow: 1px 1px 10px 1px var(--clr-primary);
   }
 }
+/* --------------------------------------------------------------------- */
+/* desktop resolution stylilng for navbar */
+/* --------------------------------------------------------------------- */
+@media (min-width: 376px) {
+  .logo {
+    display: inline-flex;
+    transform: translateY(0.8rem);
+    gap: 6px;
+    & > svg {
+      fill: var(--clr-primary);
+    }
+    & > h1 {
+      font-weight: 800;
+    }
+  }
+  .nav-container {
+    margin: 0 5rem;
+    width: 80%;
+    justify-content: space-between;
+  }
+  #home-link {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    padding: 0.25rem 0.5rem;
+  }
+  .nav-search {
+    height: 2.5rem;
+    & > input {
+      height: 2.5rem;
+      width: 500px;
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }
+  .login-link {
+    display: flex;
+    gap: 6px;
+    padding: 0.25rem 0.5rem;
+    justify-content: space-between;
+    & > span {
+      font-weight: 600;
+      align-self: center;
+    }
+  }
+}
+/* --------------------------------------------------------------------- */
 /* Navbar styling ends */
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
 /* Styling Signup/Login page */
+/* --------------------------------------------------------------------- */
 .wrapper,
 .main {
   background-color: var(--clr-secondary);
@@ -189,6 +250,8 @@ label > svg {
   width: 50%;
   padding: 0.75rem;
   border-radius: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   background-color: var(--clr-surface);
   border: none;
 
@@ -201,6 +264,8 @@ label > svg {
   width: 50%;
   padding: 0.75rem;
   border-radius: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   background-color: var(--clr-surface);
   border: none;
 
@@ -223,3 +288,146 @@ label > svg {
     box-shadow: 1px 1px 10px 2px var(--clr-primary);
   }
 }
+/* --------------------------------------------------------------------- */
+/* ending login/signup styling */
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+/* styling main page */
+/* --------------------------------------------------------------------- */
+#home-main {
+  padding: 1rem;
+}
+/* General card styling */
+.card {
+  --size: 15px;
+  background-color: var(--clr-secondary);
+  padding: var(--size);
+  border-radius: var(--size);
+  margin-bottom: var(--size);
+  & h2 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  & p {
+    font-size: 14px;
+  }
+}
+/* --------------------------------------------------------------------- */
+/* Information section */
+/* --------------------------------------------------------------------- */
+.weather-data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  /* --------------------------------------------------------------------- */
+  /*  left part of main page */
+  /* --------------------------------------------------------------------- */
+  & .weather-left {
+    grid-column: span 1;
+    /*  current weather section */
+    & .current-weather {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & h2 {
+        margin: 7px 0;
+      }
+    }
+    & .card-footer p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    /*  5 day forecast section  */
+    & .forecast-item {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+      margin-bottom: 15px;
+      & .icon-wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  /* --------------------------------------------------------------------- */
+  /*  right part of main page */
+  /* --------------------------------------------------------------------- */
+  & .weather-right {
+    grid-column: span 3;
+    & h2 {
+      margin-bottom: 10px;
+    }
+    /*   Highlights section*/
+    & .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 15px;
+      & .card:nth-of-type(1),
+      & .card:nth-of-type(2) {
+        grid-column: span 2;
+      }
+      & .card-head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        & .air-index {
+          padding: 5px 10px;
+          border-radius: 15px;
+          &.aqi-1 {
+            background-color: var(--aqi-1);
+          }
+          &.aqi-2 {
+            background-color: var(--aqi-2);
+          }
+          &.aqi-3 {
+            background-color: var(--aqi-3);
+          }
+          &.aqi-4 {
+            background-color: var(--aqi-4);
+          }
+          &.aqi-5 {
+            background-color: var(--aqi-5);
+          }
+        }
+      }
+      & .air-indices {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        & p {
+          text-align: center;
+        }
+      }
+      /*  sunrise/sunset card */
+      & .sunrise-sunset {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        & .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          & h2 {
+            margin-top: 15px;
+          }
+        }
+      }
+      /*  humidity,visibility,etc. section */
+      & .card-item {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    /*  today at section */
+    & .hourly-forecast {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 10px;
+      & .card {
+        text-align: center;
+      }
+    }
+  }
+}
+/* --------------------------------------------------------------------- */
+/* Main page styling ends */
+/* --------------------------------------------------------------------- */
