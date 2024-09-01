@@ -22,6 +22,9 @@ themeToggle.addEventListener("click", () => {
 // Populating weather info (API Integration)
 // ------------------------------------------
 
+// Var declaration section
+// ------------------------------------------
+
 let citySearch = document.querySelector(".search-field");
 let apiKey = "b87e89c0aea40aa9c0c643fa055f8ed2"; //apikey from openweather
 let currentWeatherCard = document.querySelectorAll(".weather-left .card")[0];
@@ -75,7 +78,8 @@ function getDetails(name, lat, lon, country, state) {
     .then((res) => res.json())
     .then((data) => {
       let { co, no, no2, o3, so2, pm2_5, pm10, nh3 } = data.list[0].components;
-
+      // changing inner html of the targetted element(card)
+      // ------------------------------------------
       aqiCard.innerHTML = `
       <div class="card-head">
           <p>Air Quality Index</p>
@@ -124,10 +128,15 @@ function getDetails(name, lat, lon, country, state) {
       alert("Failed to fetch Air Quality Index");
     });
 
+  // fetching weather detainls like temperature and description
+  // ------------------------------------------
+
   fetch(weatherURL)
     .then((res) => res.json())
     .then((data) => {
       let date = new Date();
+      // changing inner html of the targetted element(card)
+      // ------------------------------------------
       currentWeatherCard.innerHTML = `<div class="current-weather">
           <div class="details">
             <p>Now</p>
@@ -152,6 +161,7 @@ function getDetails(name, lat, lon, country, state) {
         </div>`;
 
       // integration to display sunset and sunrise timings
+      // ------------------------------------------
 
       let { sunrise, sunset } = data.sys;
       let { timezone, visibility } = data,
@@ -165,6 +175,8 @@ function getDetails(name, lat, lon, country, state) {
         .utc(sunset, "X")
         .add(timezone, "seconds")
         .format("hh:mm A");
+      // changing inner html of the targetted element(card)
+      // ------------------------------------------
       sunriseCard.innerHTML = `
         <div class="card-head">
             <p>Sunrise & Sunset</p>
@@ -214,6 +226,8 @@ function getDetails(name, lat, lon, country, state) {
         if (hr < 12) a = "AM";
         if (hr == 0) hr = 12;
         if (hr > 12) hr = hr - 12;
+        // changing inner html of the targetted element(card)
+        // ------------------------------------------
         hourlyForecastCard.innerHTML += `
         <div class="card">
               <p>${hr} ${a} </p>
@@ -231,6 +245,8 @@ function getDetails(name, lat, lon, country, state) {
       fiveDaysForecastCard.innerHTML = "";
       for (let i = 1; i < fiveDaysForecast.length; i++) {
         let date = new Date(fiveDaysForecast[i].dt_txt);
+        // changing inner html of the targetted element(card)
+        // ------------------------------------------
         fiveDaysForecastCard.innerHTML += `
          <div class="forecast-item">
                 <div class="icon-wrapper">

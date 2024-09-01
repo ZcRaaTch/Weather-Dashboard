@@ -31,13 +31,13 @@ dragContLeft.addEventListener("dragover", (e) => {
 
 function getDragAfterElement(container, y) {
   const draggableElements = [
-    ...container.querySelectorAll(".draggable-left:not(.dragging)"),
+    ...container.querySelectorAll(".draggable-left:not(.dragging)"), //getting elements other than the one being dragged
   ];
 
   return draggableElements.reduce(
     (closest, child) => {
       const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
+      const offset = y - box.top - box.height / 2; //vertical offset
       if (offset < 0 && offset > closest.offset) {
         return { offset: offset, element: child };
       } else {
@@ -80,7 +80,7 @@ highlights.addEventListener("dragover", (e) => {
 // Function to get the closest element based on both x and y coordinates
 function getClosestElement(container, x, y) {
   const draggableElements = [
-    ...container.querySelectorAll(".highlights>.card:not(.dragging)"),
+    ...container.querySelectorAll(".highlights>.card:not(.dragging)"), //getting elements other than the one being dragged
   ];
 
   return draggableElements.reduce(

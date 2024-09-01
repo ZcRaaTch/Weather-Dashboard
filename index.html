@@ -22,6 +22,7 @@
     <title>Weather App</title>
   </head>
   <body class="body">
+    <!-- Navbar Content -->
     <nav id="navbar">
       <div class="mobile-hidden logo">
         <svg
@@ -38,9 +39,11 @@
         <h1 class="mobile-hidden">Weather</h1>
       </div>
       <div class="nav-container">
+        <!-- home link -->
         <div id="nav-home">
           <a href="./index.html"><p id="home-link">HOME</p></a>
         </div>
+        <!-- search field -->
         <div class="nav-search">
           <input
             type="search"
@@ -52,6 +55,7 @@
             data-search-field
           />
         </div>
+        <!-- login page link -->
         <a href="./login.html" class="nav-login-link"
           ><span class="login-text mobile-hidden">LOGIN</span
           ><svg
@@ -65,7 +69,7 @@
               d="M480-440q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-46q-54-53-125.5-83.5T480-360q-83 0-154.5 30.5T200-246v46Z"
             /></svg
         ></a>
-
+        <!-- Dark/light theme toggle button -->
         <button id="theme-toggle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +85,23 @@
         </button>
       </div>
     </nav>
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- Navbar Ends -->
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- Main Dashboard begins -->
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- I have divided the entire dashboard in two sections (left and right) -->
+    <!-- Left section has two cards (current weather and 5 day forecast) -->
+    <!-- Right section has its own different part, majorly (highlights and hourly forecast) -->
+    <!-- ------------------------------------------------------------------------------------- -->
     <main id="home-main">
       <div class="weather-data">
+        <!-- ------------------------------------------------------------------------------------- -->
+        <!-- Left section of the Dashboard -->
+        <!-- ------------------------------------------------------------------------------------- -->
         <div class="weather-left drag-cont-left">
+          <!-- Cureent weather card -->
           <div class="card draggable-left" draggable="true">
             <div class="current-weather">
               <div class="details">
@@ -104,6 +122,7 @@
               <p><i class="fa-light fa-location-dot"></i>____</p>
             </div>
           </div>
+          <!-- 5 days forecast card -->
           <div class="card draggable-left" draggable="true">
             <h2>5 Days Forecast</h2>
             <div class="day-forecast">
@@ -160,14 +179,21 @@
             </div>
           </div>
         </div>
+        <!-- ------------------------------------------------------------------------------------- -->
+        <!-- Right section of the Dashboard -->
+        <!-- ------------------------------------------------------------------------------------- -->
         <div class="weather-right">
           <h2>Today's Highlights</h2>
+          <!-- Highlights part -->
+          <!-- ------------------------------------------------------------------------------------- -->
           <div class="highlights cont">
             <div class="card" draggable="true">
+              <!-- Air quality card -->
               <div class="card-head">
                 <p>Air Quality Index</p>
                 <p class="air-index aqi-1">Good</p>
               </div>
+              <!-- Various Air Quality Indicators -->
               <div class="air-indices">
                 <i class="fa-regular fa-wind fa-3x"></i>
                 <div class="item">
@@ -204,6 +230,7 @@
                 </div>
               </div>
             </div>
+            <!-- Sunrise/Sunset timing card -->
             <div class="card" draggable="true">
               <div class="card-head">
                 <p>Sunrise & Sunset</p>
@@ -229,7 +256,10 @@
                 </div>
               </div>
             </div>
+            <!-- Various weather elements' information part -->
+            <!-- ------------------------------------------------------------------------------------- -->
             <div class="card" draggable="true">
+              <!-- Humidity -->
               <div class="card-head">
                 <p>Humidity</p>
               </div>
@@ -239,6 +269,7 @@
               </div>
             </div>
             <div class="card" draggable="true">
+              <!-- Pressure -->
               <div class="card-head">
                 <p>Pressure</p>
               </div>
@@ -248,6 +279,7 @@
               </div>
             </div>
             <div class="card" draggable="true">
+              <!-- Visibility -->
               <div class="card-head">
                 <p>Visibility</p>
               </div>
@@ -257,6 +289,7 @@
               </div>
             </div>
             <div class="card" draggable="true">
+              <!-- Wind Speed -->
               <div class="card-head">
                 <p>Wind Speed</p>
               </div>
@@ -266,6 +299,7 @@
               </div>
             </div>
             <div class="card" draggable="true">
+              <!-- Feels like -->
               <div class="card-head">
                 <p>Feels Like</p>
               </div>
@@ -276,6 +310,8 @@
             </div>
           </div>
           <h2>Today at</h2>
+          <!-- Hourly forecast part -->
+          <!-- ------------------------------------------------------------------------------------- -->
           <div class="hourly-forecast">
             <div class="card">
               <p>9 AM</p>
