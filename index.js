@@ -17,8 +17,11 @@ themeToggle.addEventListener("click", () => {
   darktheme !== "active" ? enableDarktheme() : disableDarktheme();
 });
 // dark theme switch ends
+
 // ------------------------------------------
 // Populating weather info (API Integration)
+// ------------------------------------------
+
 let citySearch = document.querySelector(".search-field");
 let apiKey = "b87e89c0aea40aa9c0c643fa055f8ed2"; //apikey from openweather
 let currentWeatherCard = document.querySelectorAll(".weather-left .card")[0];
@@ -34,7 +37,10 @@ let humidityVal = document.getElementById("humidityVal"),
   feelsVal = document.getElementById("feelsVal");
 
 let hourlyForecastCard = document.querySelector(".hourly-forecast");
+
 //function to populate dashboard
+// ------------------------------------------
+
 function getDetails(name, lat, lon, country, state) {
   let forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`,
     weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`,
@@ -62,6 +68,8 @@ function getDetails(name, lat, lon, country, state) {
       "Nov",
       "Dec",
     ];
+
+  // fetching air quality and pollution information
 
   fetch(airPollutionURL)
     .then((res) => res.json())
@@ -143,6 +151,8 @@ function getDetails(name, lat, lon, country, state) {
           <p><i class="fa-light fa-location-dot"></i>${name},${country}</p>
         </div>`;
 
+      // integration to display sunset and sunrise timings
+
       let { sunrise, sunset } = data.sys;
       let { timezone, visibility } = data,
         { humidity, pressure, feels_like } = data.main,
@@ -190,6 +200,8 @@ function getDetails(name, lat, lon, country, state) {
       alert("Failed to fetch current weather");
     });
 
+  // forecast integration for 5-days forecast and hourly forecast
+
   fetch(forecastURL)
     .then((res) => res.json())
     .then((data) => {
@@ -236,13 +248,14 @@ function getDetails(name, lat, lon, country, state) {
               </div>
         `;
       }
-      // console.log(data);
     })
     .catch(() => {
       alert("Failed to fetch weather forecast");
     });
 }
+
 //getting search field value
+
 citySearch.addEventListener("change", () => {
   let cityName = citySearch.value;
   citySearch.value = "";
@@ -286,4 +299,6 @@ function getUserData() {
     }
   );
 }
+
+// calling getuser data on website loading
 window.addEventListener("load", getUserData);

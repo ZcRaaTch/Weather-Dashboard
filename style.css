@@ -90,6 +90,10 @@ hr {
 button {
   cursor: pointer;
 }
+.dragging {
+  opacity: 0.8;
+  background-color: var(--clr-surface);
+}
 @media (min-width: 376px) {
   .desktop-hidden {
     display: none;
@@ -217,7 +221,7 @@ button {
   overflow-x: hidden;
 
   width: min(600px, 90%);
-  margin: 200px auto;
+  margin: 35% auto;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: -2px 2px 10px 3px var(--clr-primary);
