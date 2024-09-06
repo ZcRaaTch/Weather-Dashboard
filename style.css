@@ -488,7 +488,7 @@ label > svg {
 @media (max-width: 850px) {
   .weather-data {
     grid-template-columns: 1fr;
-    & .highlights {
+    & .weather-right .highlights {
       & .card:nth-of-type(3),
       & .card:nth-of-type(4),
       & .card:nth-of-type(5),
